@@ -8,6 +8,15 @@ class Hardware:
         self.ram_gb = ram_gb
         self.os_reserved_gb = os_reserved_gb
 
+    @classmethod
+    def from_profile(cls, prof):
+        """Build the twin from hardware_profile.json (see twin/profiler.py)."""
+        return cls(
+            mem_bw_gbs=prof.get("mem_bw_gbs_multi") or prof["mem_bw_gbs_single"],
+            peak_gflops=prof.get("peak_gflops_estimate") or 1.0,
+            ram_gb=prof.get("ram_gb") or 8.0,
+        )
+
     @property
     def usable_ram_gb(self):
         return max(self.ram_gb - self.os_reserved_gb, 0)
