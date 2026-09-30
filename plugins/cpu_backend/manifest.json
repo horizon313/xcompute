@@ -1,0 +1,7 @@
+{
+  "name": "cpu_backend",
+  "version": "0.1.0",
+  "provides": ["backend.cpu"],
+  "requires": [],
+  "entry": "plugin:CpuBackend"
+}

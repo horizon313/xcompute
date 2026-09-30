@@ -1,0 +1,10 @@
+[project]
+name = "xcompute"
+version = "0.1.0"
+description = "Adaptive compute optimizer with hardware digital twin"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["xcompute*"]
